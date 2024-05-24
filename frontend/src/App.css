@@ -3,6 +3,7 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  --top-navbar-height: 56px;
 }
 /* Reset base styles */
 body, html {
@@ -23,17 +24,57 @@ body, html {
   z-index: 1000; /* Ensure it stays above other content */
   background-color: #202020;
   color: #202020;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
+  padding-left: 3em;
 }
+
+.navbar-custom {
+  background-color: #202020;
+  border-radius: 35px;
+}
+.navbar-container {
+  margin-left: 5em;
+  margin-right: 5em;
+}
+
+.side-navbar {
+  width: 250px;
+  height: calc(100vh - var(--top-navbar-height)); /* Full height minus the top navbar height */
+  position: fixed;
+  top: var(--top-navbar-height); /* Start below the top navbar */
+  left: 0;
+  background-color: #141414; /* Dark grey */
+  color: white;
+  padding-top: 20px;
+  overflow-y: auto; /* Add scroll if content overflows */
+  z-index: 1050; /* Higher z-index to ensure it is in front of the header */
+  border-top-right-radius: 15px; /* Round the top right corner */
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.side-navbar .nav-link {
+  color: white;
+  margin: 0 10px;
+}
+
+.side-navbar .nav-link:hover {
+  background-color: #495057;
+  color: white;
+}
+
 
 div {
   font-palette: light;
 }
 
-.navbar-custom {
-  background-color: #202020;
-}
-
 /* Add padding to the container to prevent overlap with the fixed navbar */
 .main-container {
   margin-top: 4rem; /* Adjust according to the navbar height */
+}
+
+.content {
+  margin-left: 250px; /* Same width as the side-nav */
+  padding: 20px;
+  margin-top: 56px; /* Adjust according to the height of top navbar */
+  flex-grow: 1;
 }

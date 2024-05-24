@@ -5,8 +5,8 @@ import { LinkContainer } from 'react-router-bootstrap';
 
 const Header: React.FC = () => {
     return (
-        <Navbar expand="lg" className="navbar-dark bg-dark navbar-custom">
-            <Container fluid>
+        <Navbar expand="lg" className="navbar-dark navbar-custom">
+            <Container className="navbar-container" fluid>
                 <LinkContainer to="/">
                     <Navbar.Brand>Free LLM</Navbar.Brand>
                 </LinkContainer>
