@@ -7,18 +7,20 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './components/Header';
 import SideNavbar from "./components/SideNavbar.tsx"; // Ensure correct import
+import Chat from './components/Chat';
 
 type TestProps = {
-    name: string;
-    email: string;
+    query: string;
+    content: string;
 }
 
 // Routes
-const Home: React.FC<TestProps> = ({ name, email }) => {
+const Home: React.FC<TestProps> = ({ query, content }) => {
     return (
     <div className="TestProps">
-        <h2>{name}</h2>
-        <p>{email}</p>
+        <p>User: {query}</p>
+        <h2>{query}</h2>
+        <p>{content}</p>
     </div>
     );
 }
@@ -30,15 +32,19 @@ const App: React.FC = () => {
     return (
         <BrowserRouter>
             <Container className='main-container'>
-                <SideNavbar />
                 <Header />
+                <SideNavbar />
                 <Routes>
-                    <Route path="/" element={<Home name={'Test'} email={"Test@testing.com"} />} />
+                    <Route path="/" element={<Home query={'KVM, commands to switch VM from Bridge to NAT.'} content={"To switch a VM's network configuration from bridge mode to NAT in KVM (Kernel-based Virtual Machine), you need to follow these steps:\n" +
+                        "\n" +
+                        "    Shutdown the VM:\n" +
+                        "    Ensure the virtual machine is turned off before making network changes."} />} />
                     <Route path="/settings" element={<Settings />} />
                     <Route path="/settings/Speech" element={<SpeechSettings />} />
                     <Route path="/settings/Display" element={<DisplaySettings />} />
                     <Route path="*" element={<Navigate to="/" />} />
                 </Routes>
+                <Chat></Chat>
             </Container>
         </BrowserRouter>
     );

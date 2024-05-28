@@ -7,13 +7,13 @@ const SideNavbar: React.FC = () => {
         <div className="side-navbar">
             <Nav className="flex-column">
                 <LinkContainer to="/">
-                    <Nav.Link to="/">TestLink1</Nav.Link>
+                    <Nav.Link>KVM Commands</Nav.Link>
+                </LinkContainer>
+                <LinkContainer to="/settings">
+                    <Nav.Link>Capital of Spain</Nav.Link>
                 </LinkContainer>
                 <LinkContainer to="/">
-                    <Nav.Link to="/">TestLink2</Nav.Link>
-                </LinkContainer>
-                <LinkContainer to="/">
-                    <Nav.Link to="/">TestLink3</Nav.Link>
+                    <Nav.Link>TestLink3</Nav.Link>
                 </LinkContainer>
             </Nav>
         </div>
