@@ -8,6 +8,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './components/Header';
 import SideNavbar from "./components/SideNavbar.tsx"; // Ensure correct import
 import Chat from './components/Chat';
+import { DropdownProvider } from './context/DropdownContext.tsx'
+    '/context/DropdownContext';
+import DropdownMenu from "./components/DropdownMenu";
 
 type TestProps = {
     query: string;
@@ -29,6 +32,7 @@ const Settings: React.FC = () => <div>Settings</div>;
 const SpeechSettings: React.FC = () => <div>Speech</div>;
 const DisplaySettings: React.FC = () => <div>Display</div>;
 const App: React.FC = () => {
+
     return (
         <BrowserRouter>
             <Container className='main-container'>

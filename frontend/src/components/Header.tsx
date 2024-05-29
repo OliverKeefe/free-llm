@@ -5,6 +5,8 @@ import { LinkContainer } from 'react-router-bootstrap';
 import FormControl from "react-bootstrap/FormControl";
 import Button from "react-bootstrap/Button";
 import InputGroup from "react-bootstrap/InputGroup";
+import DropdownMenu from './DropdownMenu.tsx';
+import { DropdownProvider } from "../context/DropdownContext.tsx";
 
 const Header: React.FC = () => {
 
@@ -22,7 +24,9 @@ const Header: React.FC = () => {
         <Navbar expand="lg" className="navbar-dark navbar-custom">
 
             <Container className="navbar-container" fluid>
-
+                <DropdownProvider>
+                    <DropdownMenu />
+                </DropdownProvider>
             </Container>
 
             <Container className="search-container">
