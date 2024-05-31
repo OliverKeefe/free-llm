@@ -1,12 +1,12 @@
 import React, {useState} from 'react';
 import Navbar from 'react-bootstrap/Navbar';
 import Container from 'react-bootstrap/Container';
-import { LinkContainer } from 'react-router-bootstrap';
 import FormControl from "react-bootstrap/FormControl";
 import Button from "react-bootstrap/Button";
 import InputGroup from "react-bootstrap/InputGroup";
 import DropdownMenu from './DropdownMenu.tsx';
 import { DropdownProvider } from "../context/DropdownContext.tsx";
+import './../App.css';
 
 const Header: React.FC = () => {
 
@@ -22,10 +22,9 @@ const Header: React.FC = () => {
 
     return (
         <Navbar expand="lg" className="navbar-dark navbar-custom">
-
             <Container className="navbar-container" fluid>
                 <DropdownProvider>
-                    <DropdownMenu />
+                    <DropdownMenu className="dropdown-menu"/>
                 </DropdownProvider>
             </Container>
 

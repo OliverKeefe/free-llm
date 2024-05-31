@@ -227,3 +227,14 @@ div {
   margin-top: 56px; /* Adjust according to the height of top navbar */
   flex-grow: 1;
 }
+
+.dropdown {
+  background-color: #191919;
+  color: white;
+  border-radius: 15px;
+}
+
+.dropdown-menu {
+  background-color: #191919;
+
+}
