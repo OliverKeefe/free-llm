@@ -23,10 +23,11 @@ const DropdownList = styled.ul`
     border: 1px solid #ccc; /* Add border to make it look like a dropdown */
     z-index: 1000; /* Ensure it's on top of other elements */
     list-style: none;
-    padding: 0;
+    padding: 10px;
     margin: 0;
-    width: 100%; /* Adjust the width as necessary */
+    width: 25%; /* Adjust the width as necessary */
     border-radius: 15px;
+    box-shadow: #191919;
 `;
 
 const DropdownButton = styled(Button)`
@@ -41,16 +42,17 @@ const DropdownListItem = styled.li`
     padding: 8px 16px; /* Adjust padding for items */
     cursor: pointer;
     &:hover {
-      background-color: #2b2f32; /* Add hover effect */
+      background-color: #2b2f32; 
+        border-radius: 15px;/* Add hover effect */
     }
 `;
 
 
-const DropdownMenu: React.FC<DropdownMenuProps> = ({className, ...props }) => {
+const DropdownMenu: React.FC<DropdownMenuProps> = () => {
     const { state, toggleDropdown, selectOption } = useDropdownContext();
 
     return (
-        <DropdownContainer className={className} {...props}>
+        <DropdownContainer>
             <DropdownButton onClick={toggleDropdown}>
                 {state.isOpen ? 'Close Dropdown' : 'Open Dropdown'}
             </DropdownButton>
