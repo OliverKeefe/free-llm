@@ -4,6 +4,8 @@ import InputGroup from "react-bootstrap/InputGroup";
 import FormControl from "react-bootstrap/FormControl";
 import Button from "react-bootstrap/Button";
 
+import attachmentIcon from '../media/icons/attachment.svg';
+
 const Chat: React.FC = () => {
     const [message, setMessage] = useState("");
 
@@ -17,7 +19,9 @@ const Chat: React.FC = () => {
 
     return (
         <Container className="chatContainer">
-            <Button className="chat-attach-button">A</Button>
+            <Button className="chat-attach-button"><img src={attachmentIcon}>
+                 </img>
+                 </Button>
             <InputGroup className="chatInput custom-chat-input">
                 <FormControl placeholder="Enter your query here..."
                              value={message}

@@ -3,6 +3,9 @@ import { useDropdownContext } from '../context/DropdownContext.tsx';
 import styled from 'styled-components';
 import Button from "react-bootstrap/Button";
 
+import menuIcon from '../media/icons/menu.svg';
+import plugIcon from '../media/icons/plug.svg';
+
 interface DropdownMenuProps {
     className?: string;
     [x: string]: any;
@@ -54,7 +57,8 @@ const DropdownMenu: React.FC<DropdownMenuProps> = () => {
     return (
         <DropdownContainer>
             <DropdownButton onClick={toggleDropdown}>
-                {state.isOpen ? 'Close Dropdown' : 'Open Dropdown'}
+                <img src={plugIcon} alt="Menu" style={{ marginRight: '8px' }} />
+               {/*{state.isOpen ? 'Close Dropdown' : 'Open Dropdown'}*/}
             </DropdownButton>
             {state.isOpen && (
                 <DropdownList>
